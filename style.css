@@ -7,6 +7,10 @@ base
     box-sizing: border-box;
 }
 
+ul {
+    list-style: none;
+}
+
 img {
     width: 100%;
     vertical-align: middle;
@@ -23,27 +27,129 @@ body {
 }
 
 /*=============================
+animation
+=============================*/
+/* ふわふわ */
+@keyframes fuwa {
+    0%, 100% {
+      transform: translateY(10px);
+    }
+    50% {
+      transform: translateY(-10px);
+    }
+}
+
+@keyframes refuwa {
+    0%, 100% {
+      transform: translateY(-10px);
+    }
+    50% {
+      transform: translateY(10px);
+    }
+}
+  
+.anime-fuwa {
+    animation: 2.5s fuwa infinite;
+}
+
+.anime-refuwa {
+    animation: 2.5s refuwa infinite;
+}
+
+@keyframes walk {
+    0%, 100% {
+      transform: translateY(-15px);
+    }
+    50% {
+      transform: translateY(15px);
+    }
+}
+.anime-walk {
+    animation: 2s walk infinite linear;
+}
+
+/*=============================
 header
 =============================*/
-.header {
-    position: absolute;
+h1 {
     opacity: 0;
+    position: fixed;
+    top: 0;
+    right: 0;
+    z-index: 10;
+}
+.nav {
+    position: relative;
+    bottom: 0;
+    right: 0;
+    width: 100%;
+    height: 100vh;
+    z-index: 10;
+}
+.nav_menu {
+    position: absolute;
+    bottom: 12%;
+    left: 0;
+    transform: translateX(45%);
+    width: 42vh;
+    z-index: 2;
+}
+.nav_menu li {
+    margin-bottom: 20px;
+    cursor: pointer;
+    transition: all .3s;
+}
+.nav_menu li:hover {
+    transform: scale(1.05);
+}
+.nav_bg-img {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    transform: translateX(160%);
+    width: 20vh;
+    z-index: 1;
 }
 
 /*=============================
 main
 =============================*/
 .main {
-    width: 100%;
+    width: 100vw;
     height: 100vh;
 }
 .container {
+    width: 200vw;
+    height: 100%;
     display: flex;
+    flex-wrap: wrap;
+    position: absolute;
+    right: 0;
+    top: 0;
+    z-index: 1;
+    transition: all 5s;
 }
 section {
-    width: 100%;
-    position: relative;
-    z-index: 10;
+    width: 100vw;
+}
+
+/* home */
+.home {
+    width: 100vw;
+    order: 2;
+}
+
+/* about */
+.about {
+    order: 3;
+    position: absolute;
+    top: 100%;
+    left: 0;
+}
+
+/* work */
+.work {
+    order: 1;
 }
 
 /*=============================
@@ -51,14 +157,15 @@ bg
 =============================*/
 .bg-img {
     background-position: center;
-    background-size: cover;
-    position: absolute;
+    background-repeat: repeat-x;
     left: 0;
     width: 100%;
     height: 100%;
 }
 .bg-img_sky {
     background-image: url(img/img_bg-morning.png);
+    background-size: cover;
+    position: fixed;
     z-index: 1;
     top: 0;
     height: 100vh;
@@ -68,27 +175,28 @@ bg
     z-index: 1;
 }
 .bg-img_sky img:nth-child(1) {
-    width: 60px;
+    width: 6%;
     top: 10%;
     left: 10%;
 }
 .bg-img_sky img:nth-child(2) {
-    width: 104px;
+    width: 7%;
     top: 10%;
     right: 10%;
 }
 .bg-img_forest {
+    position: absolute;
     background-image: url(img/img_bg-forest.png);
     background-size: auto 100vh;
-    background-position: center bottom;
-    background-repeat: repeat-x;
-    bottom: 0;
+    background-position: right bottom;
+    bottom: -4%;
     z-index: 2;
 }
 .bg-img_ground {
+    position: absolute;
     background-image: url(img/img_bg-ground.png);
+    background-size: auto 127px;
     background-position: center bottom;
-    background-repeat: repeat-x;
     height: 127px;
     bottom: 0;
     z-index: 4;
@@ -99,11 +207,12 @@ parts
 =============================*/
 .parts-img_girl {
     position: absolute;
-    bottom: 0;
-    left: 50%;
-    transform: translateX(-50%);
+    bottom: -60px;
+    right: 0;
     z-index: 3;
-    width: 160px;
+    width: 6%;
+    transform: translateX(0);
+    transition: all 3s;
 }
 
 
