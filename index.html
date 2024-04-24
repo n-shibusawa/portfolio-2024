@@ -8,7 +8,6 @@
   <meta name="description" content="サイトキャプションを入力">
   <link rel="stylesheet" href="https://unpkg.com/ress@4.0.0/dist/ress.min.css">
   <link rel="stylesheet" href="style.css">
-  <script src="js/script.js"></script>
 </head>
 <body>
   <header class="header">
@@ -36,10 +35,11 @@
       </section>
       <section class="work">
         <h2>WORK</h2>
+        <div class="back_work" onclick="backWorkClick()">back</div>
       </section>
       <!-- 背景コンテンツ -->
       <div class="bg-img bg-img_ground"></div>
-      <div id="mouseStoker" class="parts-img_girl anime-walk">
+      <div class="parts-img_girl anime-walk" id="parts-img_girl">
         <img src="img/parts_girl-popular.png" alt="">
       </div>
       <div class="bg-img bg-img_forest"></div>
@@ -53,5 +53,6 @@
   <footer class="footer">
     <p><small>© NODOKA SHIBUSAWA 2024</small></p>
   </footer>
+  <script src="js/script.js"></script>
 </body>
 </html>
