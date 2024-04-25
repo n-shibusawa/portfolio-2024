@@ -16,6 +16,14 @@ img {
     vertical-align: middle;
 }
 
+.button {
+    cursor: pointer;
+    transition: all .3s;
+}
+.button:hover {
+    transform: scale(1.05);
+}
+
 body {
     overflow: hidden;
     width: 100%;
@@ -35,6 +43,9 @@ animation
       transform: translateY(-10px);
     }
 }
+.anime-fuwa {
+    animation: 2.5s fuwa infinite;
+}
 
 @keyframes refuwa {
     0%, 100% {
@@ -44,11 +55,6 @@ animation
       transform: translateY(10px);
     }
 }
-  
-.anime-fuwa {
-    animation: 2.5s fuwa infinite;
-}
-
 .anime-refuwa {
     animation: 2.5s refuwa infinite;
 }
@@ -97,11 +103,6 @@ h1 {
 }
 .nav_menu li {
     margin-bottom: 20px;
-    cursor: pointer;
-    transition: all .3s;
-}
-.nav_menu li:hover {
-    transform: scale(1.05);
 }
 .nav_bg-img {
     position: absolute;
@@ -157,6 +158,13 @@ section {
 .work {
     order: 1;
 }
+.back_work {
+    width: 18vw;
+    position: absolute;
+    z-index: 1;
+    bottom: 52%;
+    left: 3%;
+}
 
 /*=============================
 bg
@@ -176,19 +184,28 @@ bg
     top: 0;
     height: 100vh;
 }
+.bg-img_sky.morning {
+    background-image: url(img/img_bg-morning.png);
+}
+.bg-img_sky.evening {
+    background-image: url(img/img_bg-evening.png);
+}
+.bg-img_sky.night {
+    background-image: url(img/img_bg-night.png);
+}
 .bg-img_sky img {
     position: absolute;
     z-index: 1;
 }
 .bg-img_sky img:nth-child(1) {
     width: 6%;
-    top: 10%;
-    left: 10%;
+    top: 6%;
+    left: 6%;
 }
 .bg-img_sky img:nth-child(2) {
     width: 7%;
-    top: 10%;
-    right: 10%;
+    top: 6%;
+    right: 6%;
 }
 .bg-img_forest {
     position: absolute;
@@ -208,6 +225,27 @@ bg
     z-index: 4;
 }
 
+/* work */
+.bg-img_ground_work {
+    background-image: url(img/img_bg-ground_work.png);
+    background-position: right bottom;
+    background-repeat: no-repeat;
+    background-size: 100%;
+    width: 56vw;
+    height: 100%;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    z-index: 3;
+}
+.flower {
+    background-image: url(img/img_bg-ground_work-flower.png);
+    width: 52vw;
+    bottom: 0;
+    left: -2%;
+    z-index: 4;
+}
+
 /*=============================
 parts
 =============================*/
@@ -216,7 +254,7 @@ parts
     bottom: -60px;
     right: 0;
     z-index: 3;
-    width: 6%;
+    width: 7%;
     transition: right 3.5s;
 }
 .parts-img_girl img {
@@ -224,6 +262,22 @@ parts
 }
 .parts-img_girl img.right {
     transform: scale(-1, 1);
+}
+
+/* work */
+.parts-img_girl_work-sleep {
+    width: 30vw;
+    position: absolute;
+    left: 0;
+    bottom: 12%;
+    z-index: 5;
+}
+.parts-img_girl_work-sleep .zzz {
+    width: 20%;
+    position: absolute;
+    right: 15%;
+    top: -34%;
+    z-index: 1;
 }
 
 /*=============================

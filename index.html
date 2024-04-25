@@ -15,10 +15,14 @@
     <nav class="nav">
       <ul class="nav_menu">
         <li class="nav_menu_about">
-          <img src="img/parts_menu-about.png" alt="ABOUT">
+          <button class="button">
+            <img src="img/parts_menu-about.png" alt="ABOUT">
+          </button>
         </li>
         <li class="nav_menu_work" onclick="workClick()">
-          <img src="img/parts_menu-work.png" alt="WORK">
+          <button class="button">
+            <img src="img/parts_menu-work.png" alt="WORK">
+          </button>
         </li>
       </ul>
       <div class="nav_bg-img">
@@ -35,13 +39,24 @@
       </section>
       <section class="work">
         <h2>WORK</h2>
-        <div class="back_work" onclick="backWorkClick()">back</div>
+        <button class="back_work button" onclick="backWorkClick()">
+          <img src="img/parts_work_back.png">
+        </button>
       </section>
       <!-- 背景コンテンツ -->
       <div class="bg-img bg-img_ground"></div>
-      <div class="parts-img_girl anime-walk" id="parts-img_girl">
+      <!-- home -->
+      <div class="parts-img_girl anime-walk">
         <img src="img/parts_girl-popular.png" alt="">
       </div>
+      <!-- work -->
+      <div class="parts-img_girl_work-sleep">
+        <img src="img/parts_zzz.png" alt="" class="zzz anime-refuwa">
+        <img src="img/parts_girl-sleep_work.png" alt="">
+      </div>
+      <div class="bg-img_ground_work flower"></div>
+      <div class="bg-img_ground_work"></div>
+      <!-- 全体共通 -->
       <div class="bg-img bg-img_forest"></div>
       <div class="bg-img bg-img_sky">
         <img src="img/parts_bg-bird-left.png" alt="" class="anime-fuwa">
