@@ -14,15 +14,15 @@
     <h1><img alt="Nodoka Shibusawa Portfolio"></h1>
     <nav class="nav">
       <ul class="nav_menu">
-        <li class="nav_menu_about">
-          <button class="button">
+        <li class="nav_menu_about button" onclick="aboutClick()">
+          <a href="">
             <img src="img/parts_menu-about.png" alt="ABOUT">
-          </button>
+          </a>
         </li>
-        <li class="nav_menu_work" onclick="workClick()">
-          <button class="button">
+        <li class="nav_menu_work button" onclick="workClick()">
+          <a href="">
             <img src="img/parts_menu-work.png" alt="WORK">
-          </button>
+          </a>
         </li>
       </ul>
       <div class="nav_bg-img">
@@ -34,14 +34,13 @@
   <main class="main">
     <div class="container">
       <div class="home"></div>
-      <section class="about">
-        <h2>ABOUT</h2>
-      </section>
       <section class="work">
         <h2>WORK</h2>
-        <button class="back_work button" onclick="backWorkClick()">
-          <img src="img/parts_work_back.png">
-        </button>
+        <div class="back_work button" onclick="backWorkClick()">
+          <a href="">
+            <img src="img/parts_work_back.png">
+          </a>
+        </div>
       </section>
       <!-- 背景コンテンツ -->
       <div class="bg-img bg-img_ground"></div>
@@ -63,6 +62,10 @@
         <img src="img/parts_bg-bird-right.png" alt="" class="anime-refuwa">
       </div>
     </div>
+    <section class="about">
+      <h2>ABOUT</h2>
+      <div class="button" onclick="backAboutClick()"><a href="">back</a></div>
+    </section>
   </main>
 
   <footer class="footer">

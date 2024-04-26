@@ -24,11 +24,21 @@ img {
     transform: scale(1.05);
 }
 
+.button a {
+    pointer-events: none;
+}
+
 body {
-    overflow: hidden;
+    overflow-x: hidden;
+    overflow-y: hidden;
     width: 100%;
     height: 100vh;
     position: relative;
+    top: 0;
+    right: 0;
+}
+body.about-active {
+    overflow-y: auto;
 }
 
 /*=============================
@@ -83,16 +93,19 @@ h1 {
 }
 .nav {
     position: relative;
-    bottom: 0;
+    bottom: -100vh;
     right: 0;
     width: 100%;
     height: 100vh;
     z-index: 10;
-    transition: bottom 1s;
+    transition: all 1s;
+    opacity: 1;
+    visibility: visible;
 }
-.nav.none {
-    bottom: -100vh;
+.nav-active {
+    bottom: 0vh;
 }
+
 .nav_menu {
     position: absolute;
     bottom: 12%;
@@ -117,7 +130,7 @@ h1 {
 main
 =============================*/
 .main {
-    width: 100vw;
+    width: 100%;
     height: 100vh;
 }
 .container {
@@ -131,38 +144,46 @@ main
     z-index: 1;
     transition: all 5s;
 }
-.container.work-area {
-    right: -100vw;
+.container.about-area {
+    position: fixed;
 }
+.container.work-area {
+    right: -100%;
+}
+
 section {
-    width: 100vw;
+    width: 100%;
     position: relative;
     z-index: 5;
 }
 
 /* home */
 .home {
-    width: 100vw;
+    width: 100%;
     order: 2;
 }
 
 /* about */
 .about {
-    order: 3;
-    position: absolute;
-    top: 100%;
-    left: 0;
+    margin-top: 0;
+    background-color: antiquewhite;
+    height: 200vh;
+    transition: all .5s;
+}
+.about.active {
+    margin-top: -50vh;
 }
 
 /* work */
 .work {
     order: 1;
+    height: 100vh;
 }
 .back_work {
     width: 18vw;
     position: absolute;
     z-index: 1;
-    bottom: 52%;
+    bottom: 52vh;
     left: 3%;
 }
 
@@ -170,13 +191,13 @@ section {
 bg
 =============================*/
 .bg-img {
-    background-position: center;
     background-repeat: repeat-x;
     left: 0;
     width: 100%;
     height: 100%;
 }
 .bg-img_sky {
+    background-position: top center;
     background-image: url(img/img_bg-morning.png);
     background-size: cover;
     position: fixed;
@@ -254,7 +275,7 @@ parts
     bottom: -60px;
     right: 0;
     z-index: 3;
-    width: 7%;
+    width: 200px;
     transition: right 3.5s;
 }
 .parts-img_girl img {
@@ -283,3 +304,12 @@ parts
 /*=============================
 footer
 =============================*/
+
+/*=============================
+共通JSクラス
+=============================*/
+/* 表示切り替え */
+.none {
+    opacity: 0;
+    visibility: hidden;
+}

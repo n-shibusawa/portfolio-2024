@@ -1,5 +1,10 @@
 'use script';
+
 // opening
+const nav = document.querySelector('.nav');
+window.addEventListener('load', function () {
+    nav.classList.toggle('nav-active');
+});
 
 // 空画像変更
 const nowTime = new Date().getHours();
@@ -22,7 +27,7 @@ if(nowTime > 20 || nowTime < 6) {
 
 // cursorStoker
 const stalker = document.querySelector('.parts-img_girl');
-const stalkerImg = stalker.getElementsByTagName('img');
+const stalkerImg = stalker.querySelector('img');
 let stalkerDisplay = true;
 document.addEventListener('mousemove', function (e) {
     if(stalkerDisplay == true) {
@@ -30,21 +35,81 @@ document.addEventListener('mousemove', function (e) {
 	    windowX = window.innerWidth;
 		direction = (windowX / 2) < mouseX ? 'right' : 'left';
         if(direction == 'left') {
-            stalkerImg[0].classList.remove('right');
+            stalkerImg.classList.remove('right');
         } else {
-            stalkerImg[0].classList.add('right');
+            stalkerImg.classList.add('right');
         }
         stalker.style.right = 'calc(100vw + -' + mouseX + 'px - 5%)';
     }
 });
 
+// nav表示切り替え
+function navNone() {
+    nav.classList.toggle('nav-active');
+    setTimeout(() => {
+        nav.classList.toggle('none');
+    }, "1000");
+};
+
+function navDisplay() {
+    nav.classList.toggle('none');
+    setTimeout(() => {
+        nav.classList.toggle('nav-active');
+    }, "1000");
+};
+
+// 共通about画面移行
+const body = document.querySelector('body');
+const container = document.querySelector('.container');
+const aboutBtn = document.querySelector('.nav_menu_about');
+const about =document.querySelector('.about');
+
+function aboutClickToggle() {
+    about.classList.toggle('active');
+    body.classList.toggle('about-active');
+    container.classList.toggle('about-area');
+}
+
+// home→about画面移行
+function aboutClick() {
+    stalkerDisplay = false;
+    navNone();
+    stalker.style.right = 'calc(44vw)';
+    setTimeout(() => {
+        stalker.querySelector('img').src = 'img/parts_girl-about1.png';
+        stalker.classList.toggle('anime-walk');
+    }, "3000");
+    setTimeout(() => {
+        stalker.querySelector('img').src = 'img/parts_girl-about2.png';
+    }, "4000");
+    setTimeout(() => {
+        aboutClickToggle();
+    }, "5000");
+}
+
+// about→home画面移行
+function backAboutClick() {
+    aboutClickToggle();
+    setTimeout(() => {
+        stalker.querySelector('img').src = 'img/parts_girl-about2.png';
+    }, "1000");
+    setTimeout(() => {
+        stalker.querySelector('img').src = 'img/parts_girl-about1.png';
+    }, "2000");
+    setTimeout(() => {
+        stalker.querySelector('img').src = 'img/parts_girl-popular.png';
+        stalker.classList.toggle('anime-walk');
+        stalkerDisplay = true;
+        navDisplay();
+    }, "3000");
+}
+
+
 // home→work画面移行
 const workBtn = document.querySelector('.nav_menu_work');
-const container = document.querySelector('.container');
-const nav = document.querySelector('.nav');
 function workClick() {
     stalkerDisplay = false;
-    nav.classList.add('none');
+    navNone();
     stalker.style.right = 'calc(120vw)';
     setTimeout(() => {
         container.classList.add('work-area');
@@ -63,7 +128,7 @@ function backWorkClick() {
     }, "3000");
     setTimeout(() => {
         stalker.style.right = 'calc(45vw)';
-        nav.classList.remove('none');
+        navDisplay();
         stalkerDisplay = true;
     }, "5000");
 }
