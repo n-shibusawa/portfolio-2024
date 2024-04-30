@@ -2,8 +2,29 @@
 
 // opening
 const nav = document.querySelector('.nav');
+const titleBox = document.querySelector('.logo');
+const title = titleBox.querySelector('h1');
+const stalker = document.querySelector('.parts-img_girl');
 window.addEventListener('load', function () {
-    nav.classList.toggle('nav-active');
+    stalkerDisplay = false;
+    title.classList.toggle('none');
+    title.classList.toggle('show');
+    setTimeout(() => {
+        title.classList.toggle('none');
+        title.classList.toggle('show');
+    }, "2000");
+    setTimeout(() => {
+        titleBox.classList.toggle('logo-none');
+    }, "3000");
+    setTimeout(() => {
+        nav.classList.toggle('nav-active');
+        stalker.style.right = '10%';
+    }, "4000");
+    setTimeout(() => {
+        stalkerDisplay = true;
+        title.classList.toggle('none');
+        title.classList.toggle('show');
+    }, "5000");
 });
 
 // 空画像変更
@@ -11,7 +32,7 @@ const nowTime = new Date().getHours();
 const sky = document.querySelector('.bg-img_sky');
 if(nowTime > 18 || nowTime < 5) {
     sky.classList.add('night');
-}else if(nowTime > 16) {
+}else if(nowTime >= 16) {
     sky.classList.add('evening');
 }else if(nowTime >= 5) {
     sky.classList.add('morning');
@@ -19,14 +40,13 @@ if(nowTime > 18 || nowTime < 5) {
 
 // キャラ画像変更
 const girl = document.querySelector('.parts-img_girl img');
-if(nowTime > 20 || nowTime < 6) {
+if(nowTime >= 22 || 6 >= nowTime) {
     girl.src = 'img/parts_girl-sleep.png';
 }else {
     girl.src = 'img/parts_girl-popular.png';
 }
 
 // cursorStoker
-const stalker = document.querySelector('.parts-img_girl');
 const stalkerImg = stalker.querySelector('img');
 let stalkerDisplay = true;
 document.addEventListener('mousemove', function (e) {
@@ -48,11 +68,13 @@ function navNone() {
     nav.classList.toggle('nav-active');
     setTimeout(() => {
         nav.classList.toggle('none');
+        nav.classList.toggle('show');
     }, "1000");
 };
 
 function navDisplay() {
     nav.classList.toggle('none');
+    nav.classList.toggle('show');
     setTimeout(() => {
         nav.classList.toggle('nav-active');
     }, "1000");
