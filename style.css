@@ -45,6 +45,65 @@ body.about-active {
 /*=============================
 animation
 =============================*/
+/* opening */
+@keyframes back {
+    0% {
+        top: 0;
+    }
+    60% {
+        top: 0;
+    }
+    80% {
+        top: -100vh;
+    }
+    100% {
+        top: -100vh;
+    }
+}
+.anime-background {
+    animation: 4s back forwards ease-in-out;
+}
+
+@keyframes logo {
+    0%, 15% {
+        opacity: 0;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50% ,-50%);
+    }
+    20% {
+        opacity: 1;
+    }
+    65% {
+        opacity: 1;
+    }
+    80% {
+        top: 50%;
+        left: 50%;
+        transform: translate(-50% ,-50%);
+    }
+    85% {
+        opacity: 0;
+        top: auto;
+        bottom: -70px;
+        left: 20px;
+        transform: none;
+    }
+    90% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+        top: auto;
+        bottom: -70px;
+        left: 20px;
+        transform: none;
+    }
+}
+.anime-logo {
+    animation: 4s logo forwards ease-in-out;
+}
+
 /* ふわふわ */
 @keyframes fuwa {
     0%, 100% {
@@ -54,10 +113,6 @@ animation
       transform: translateY(-10px);
     }
 }
-.anime-fuwa {
-    animation: 2.5s fuwa infinite;
-}
-
 @keyframes refuwa {
     0%, 100% {
       transform: translateY(-10px);
@@ -66,20 +121,14 @@ animation
       transform: translateY(10px);
     }
 }
-.anime-refuwa {
-    animation: 2.5s refuwa infinite;
+.anime-fuwa {
+    animation: 2.5s fuwa infinite ease-in-out;
 }
-
-@keyframes walk {
-    0%, 100% {
-      transform: translateY(-15px);
-    }
-    50% {
-      transform: translateY(15px);
-    }
+.anime-refuwa {
+    animation: 2.5s refuwa infinite ease-in-out;
 }
 .anime-walk {
-    animation: 2s walk infinite linear;
+    animation: 2s fuwa infinite linear;
 }
 
 /*=============================
@@ -93,10 +142,6 @@ header
     left: 0;
     z-index: 20;
     background: #447156;
-    transition: all 1s;
-}
-.logo-none {
-    top: -100vh;
 }
 h1 {
     position: absolute;
@@ -104,13 +149,6 @@ h1 {
     left: 50%;
     transform: translate(-50% ,-50%);
     z-index: 10;
-    transition: all 1s;
-}
-.logo-none h1 {
-    top: auto;
-    bottom: -70px;
-    left: 20px;
-    transform: none;
 }
 .nav {
     position: relative;

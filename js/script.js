@@ -2,28 +2,15 @@
 
 // opening
 const nav = document.querySelector('.nav');
-const titleBox = document.querySelector('.logo');
-const title = titleBox.querySelector('h1');
 const stalker = document.querySelector('.parts-img_girl');
 window.addEventListener('load', function () {
     stalkerDisplay = false;
-    title.classList.toggle('none');
-    title.classList.toggle('show');
-    setTimeout(() => {
-        title.classList.toggle('none');
-        title.classList.toggle('show');
-    }, "2000");
-    setTimeout(() => {
-        titleBox.classList.toggle('logo-none');
-    }, "3000");
     setTimeout(() => {
         nav.classList.toggle('nav-active');
         stalker.style.right = '10%';
     }, "4000");
     setTimeout(() => {
         stalkerDisplay = true;
-        title.classList.toggle('none');
-        title.classList.toggle('show');
     }, "5000");
 });
 
