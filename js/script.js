@@ -27,11 +27,14 @@ if(nowTime > 18 || nowTime < 5) {
 
 // キャラ画像変更
 const girl = document.querySelector('.parts-img_girl img');
-if(nowTime >= 22 || 6 >= nowTime) {
-    girl.src = 'img/parts_girl-sleep.png';
-}else {
-    girl.src = 'img/parts_girl-popular.png';
-}
+function sleep() {
+    if(nowTime >= 22 || 6 >= nowTime) {
+        girl.src = 'img/parts_girl-sleep.png';
+    }else {
+        girl.src = 'img/parts_girl-popular.png';
+    }
+};
+sleep();
 
 // cursorStoker
 const stalkerImg = stalker.querySelector('img');
@@ -106,7 +109,7 @@ function backAboutClick() {
         stalker.querySelector('img').src = 'img/parts_girl-about1.png';
     }, "2000");
     setTimeout(() => {
-        stalker.querySelector('img').src = 'img/parts_girl-popular.png';
+        sleep();
         stalker.classList.toggle('anime-walk');
         stalkerDisplay = true;
         navDisplay();
