@@ -4,6 +4,10 @@
 const nav = document.querySelector('.nav');
 const stalker = document.querySelector('.parts-img_girl');
 window.addEventListener('load', function () {
+    window.scroll({
+        top: 0,
+        behavior: "smooth",
+    });
     stalkerDisplay = false;
     setTimeout(() => {
         nav.classList.toggle('nav-active');
@@ -101,6 +105,10 @@ function aboutClick() {
 
 // about→home画面移行
 function backAboutClick() {
+    window.scroll({
+        top: 0,
+        behavior: "smooth",
+    });
     aboutClickToggle();
     setTimeout(() => {
         stalker.querySelector('img').src = 'img/parts_girl-about2.png';
@@ -136,7 +144,7 @@ function backWorkClick() {
     container.classList.remove('work-area');
     setTimeout(() => {
         stalker.style.display = 'block';
-        stalkerImg[0].classList.add('right');
+        stalkerImg.classList.add('right');
     }, "3000");
     setTimeout(() => {
         stalker.style.right = 'calc(45vw)';

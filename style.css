@@ -345,7 +345,8 @@ parts
     bottom: -60px;
     right: -200px;
     z-index: 3;
-    width: 17vw;
+    width: 10vh;
+    min-width: 14vw;
     transition: right 3.5s;
 }
 .parts-img_girl img {
