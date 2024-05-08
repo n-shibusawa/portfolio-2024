@@ -7,6 +7,7 @@
   <title>Nodoka Shibusawa</title>
   <meta name="description" content="サイトキャプションを入力">
   <link rel="stylesheet" href="https://unpkg.com/ress@4.0.0/dist/ress.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -43,6 +44,16 @@
             <img src="img/parts_work_back.png">
           </a>
         </div>
+        <div class="swiper none">
+          <ul class="swiper-wrapper">
+            <li class="swiper-slide">Slide 1</li>
+            <li class="swiper-slide">Slide 2</li>
+            <li class="swiper-slide">Slide 3</li>
+          </ul>
+          <div class="swiper-pagination"></div>
+          <div class="swiper-button-prev"></div>
+          <div class="swiper-button-next"></div>
+        </div>
       </section>
       <!-- 背景コンテンツ -->
       <div class="bg-img bg-img_ground"></div>
@@ -66,6 +77,56 @@
     </div>
     <section class="about">
       <h2>ABOUT</h2>
+      <section class="about-content">
+        <h3>渋澤 のどか</h3>
+        <span>Shibusawa Nodoka</span>
+        <dl>
+          <dt>生年月日</dt>
+          <dd>1999/7/28（24歳）</dd>
+          <dt>出身</dt>
+          <dd>群馬県伊勢崎市</dd>
+          <dt>職歴</dt>
+          <dd>マークアップエンジニア 2年9ヶ月</dd>
+          <dd>フロントエンドエンジニア 1年2ヶ月</dd>
+        </dl>
+        <img alt="渋澤のどか" src="">
+        <p>2020年4月に新卒で印刷/デザイン制作会社に入社。<br>web制作部署に配属され、マークアップエンジニアとしてサイト制作やCMSの記事更新などを担当。2022年12月に退職。<br>2023年3月に株式会社JUTJOYに就職。某住宅探しのサイト制作・改修の案件に現在まで参画。<br>自社ではフロントエンジニアのメンターとして、HTMLやCSS、JavaScriptなどのカリキュラムの受講者指導などを行っている。</p>
+      </section>
+      <section>
+        <h3>SKILL</h3>
+        <span>スキル</span>
+        <div>
+          <h4>TOOL</h4>
+          <span>使用可能ツール</span>
+          <dl>
+            <dt>Photoshop</dt>
+            <dd>5年</dd>
+            <dt>illustrator</dt>
+            <dd>4年</dd>
+            <dt>XD</dt>
+            <dd>4年</dd>
+            <dt>AfterEffect</dt>
+            <dd>1年</dd>
+            <dt>Premiere Pro</dt>
+            <dd>4ヶ月</dd>
+          </dl>
+        </div>
+        <div>
+          <h4>LANGUAGE</h4>
+          <span>使用可能言語</span>
+          <dl>
+            <dt>HTML/CSS</dt>
+            <dd>4年</dd>
+            <dt>JavaScript</dt>
+            <dd>2年</dd>
+            <dt>jQuery</dt>
+            <dd>2年</dd>
+            <dt>Angular</dt>
+            <dd>6ヶ月</dd>
+          </dl>
+          <p>そのほか<strong>WordPress</strong>のテーマ構築や、<strong>STUDIO</strong>でのLP作成の経験あり</p>
+        </div>
+      </section>
       <div class="button" onclick="backAboutClick()"><a href="">back</a></div>
     </section>
   </main>
@@ -73,6 +134,7 @@
   <footer class="footer">
     <p><small>© NODOKA SHIBUSAWA 2024</small></p>
   </footer>
+  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
   <script src="js/script.js"></script>
 </body>
 </html>

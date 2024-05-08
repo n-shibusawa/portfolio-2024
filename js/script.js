@@ -27,7 +27,7 @@ if(nowTime > 18 || nowTime < 5) {
     sky.classList.add('evening');
 }else if(nowTime >= 5) {
     sky.classList.add('morning');
-}
+};
 
 // キャラ画像変更
 const girl = document.querySelector('.parts-img_girl img');
@@ -84,7 +84,7 @@ function aboutClickToggle() {
     about.classList.toggle('active');
     body.classList.toggle('about-active');
     container.classList.toggle('about-area');
-}
+};
 
 // home→about画面移行
 function aboutClick() {
@@ -101,7 +101,7 @@ function aboutClick() {
     setTimeout(() => {
         aboutClickToggle();
     }, "5000");
-}
+};
 
 // about→home画面移行
 function backAboutClick() {
@@ -122,11 +122,12 @@ function backAboutClick() {
         stalkerDisplay = true;
         navDisplay();
     }, "3000");
-}
+};
 
 
 // home→work画面移行
 const workBtn = document.querySelector('.nav_menu_work');
+const slider = document.querySelector('.swiper');
 function workClick() {
     stalkerDisplay = false;
     navNone();
@@ -135,13 +136,18 @@ function workClick() {
         container.classList.add('work-area');
         stalker.style.display = 'none';
     }, "2000");
-}
+    setTimeout(() => {
+        slider.classList.toggle('none');
+        slider.classList.toggle('show');
+    }, "6000");
+};
 
 // work→home画面移行
 const backWorkBtn = document.querySelector('.back_work');
-
 function backWorkClick() {
     container.classList.remove('work-area');
+    slider.classList.toggle('none');
+    slider.classList.toggle('show');
     setTimeout(() => {
         stalker.style.display = 'block';
         stalkerImg.classList.add('right');
@@ -151,4 +157,17 @@ function backWorkClick() {
         navDisplay();
         stalkerDisplay = true;
     }, "5000");
-}
+};
+
+//swiper
+const workSwiper = new Swiper('.swiper', {
+    loop: true,
+    pagination: {
+        el: '.swiper-pagination',
+        clickable: true,
+    },
+    navigation: {
+        nextEl: '.swiper-button-next',
+        prevEl: '.swiper-button-prev',
+    },
+});
