@@ -37,6 +37,7 @@ body {
     top: 0;
     right: 0;
     z-index: 1;
+    color: #5a3118;
 }
 body.about-active {
     overflow-y: auto;
@@ -220,8 +221,8 @@ section {
     z-index: 5;
 }
 h2 {
-    font-size: 3vw;
-    color: #5a3118;
+    font-size: 2vw;
+    background-color: antiquewhite;
 }
 
 /* home */
@@ -248,11 +249,89 @@ h2 {
 }
 .work h2 {
     position: absolute;
-    top: 10vh;
-    left: 61vw;
+    top: 10%;
+    left: 50%;
+    transform: translateX(-50%);
     display: inline-block;
     z-index: 3;
+    padding: 1% 4%;
+    border-radius: 3vw;
 }
+.work h3 {
+    margin-bottom: 1em;
+}
+
+.swiper {
+    width: 60vw;
+    position: absolute;
+    right: 4vw;
+    top: 50%;
+    transform: translateY(-50%);
+    transition: 1s;
+    z-index: 2;
+    aspect-ratio: 4 / 3;
+}
+.swiper-slide {
+    background-color: antiquewhite;
+    border-radius: 1vw;
+    transition: .5s;
+    padding: 6%;
+}
+.swiper-slide:not(.swiper-slide-visible) {
+    pointer-events: none;
+    opacity: .3;
+}
+
+.slide {
+    margin-bottom: 2%;
+}
+.slide_title {
+    font-size: 1.4vw;
+    margin-bottom: .5em;
+    font-weight: bold;
+}
+.slide_img {
+    text-align: center;
+}
+.slide_img img{
+    width: 100%;
+    aspect-ratio: 5 / 2;
+}
+.more {
+    text-align: center;
+}
+.more a {
+    display: inline-block;
+    background: #5a3118;
+    color: antiquewhite;
+    font-size: 1vw;
+    font-weight: bold;
+    padding: 2% 4%;
+    border-radius: 3vw;
+    text-decoration: none;
+    transition: all .3s;
+}
+.more a:hover {
+    opacity: .8;
+}
+
+.swiper-button-prev,
+.swiper-button-next {
+    margin: 0;
+    right: 4%;
+    left: initial;
+    transform: rotate(90deg);
+}
+.swiper-button-prev {
+    top: 0;
+}
+.swiper-button-next {
+    top: initial;
+    bottom: 0;
+}
+
+
+
 .back_work {
     width: 18vw;
     position: absolute;
@@ -260,18 +339,6 @@ h2 {
     bottom: 26vw;
     left: 2vw;
     filter: drop-shadow(0 3px 3px rgba(0, 0, 0, 1));
-}
-.swiper {
-    width: 60vw;
-    aspect-ratio: 3 / 2;
-    background-color: antiquewhite;
-    border-radius: 20px;
-    position: absolute;
-    right: 4vw;
-    top: 50%;
-    transform: translateY(-50%);
-    transition: 1s;
-    z-index: 2;
 }
 
 /*=============================

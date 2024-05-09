@@ -161,13 +161,20 @@ function backWorkClick() {
 
 //swiper
 const workSwiper = new Swiper('.swiper', {
+    direction: "vertical",
+    spaceBetween: 32,
+    slidesPerView: 1.3,
+    watchSlidesProgress: true,
     loop: true,
+    loopAdditionalSlides: 1,
+    centeredSlides: true,
+    speed: 1000,
     pagination: {
-        el: '.swiper-pagination',
+        el: ".swiper-pagination",
         clickable: true,
     },
     navigation: {
-        nextEl: '.swiper-button-next',
-        prevEl: '.swiper-button-prev',
+        nextEl: ".swiper-button-next",
+        prevEl: ".swiper-button-prev",
     },
 });
