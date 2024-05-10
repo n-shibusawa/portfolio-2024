@@ -168,7 +168,7 @@ const workSwiper = new Swiper('.swiper', {
     loop: true,
     loopAdditionalSlides: 1,
     centeredSlides: true,
-    speed: 1000,
+    speed: 1600,
     pagination: {
         el: ".swiper-pagination",
         clickable: true,
