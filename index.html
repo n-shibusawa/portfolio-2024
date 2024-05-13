@@ -6,6 +6,10 @@
   <meta name="viewport" content="width=device-width,initial-scale=1.0">
   <title>Shibusawa Nodoka</title>
   <meta name="description" content="サイトキャプションを入力">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=M+PLUS+1p" rel="stylesheet">
   <link rel="stylesheet" href="https://unpkg.com/ress@4.0.0/dist/ress.min.css">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
   <link rel="stylesheet" href="style.css">
@@ -146,63 +150,87 @@
       </div>
     </div>
     <section class="about">
-      <h2>ABOUT</h2>
-      <section class="about-content">
-        <h3>渋澤 のどか</h3>
-        <span>Shibusawa Nodoka</span>
-        <dl>
-          <dt>生年月日</dt>
-          <dd>1999/7/28（24歳）</dd>
-          <dt>出身</dt>
-          <dd>群馬県伊勢崎市</dd>
-          <dt>職歴</dt>
-          <dd>マークアップエンジニア 2年9ヶ月</dd>
-          <dd>フロントエンドエンジニア 1年2ヶ月</dd>
-        </dl>
-        <img alt="渋澤のどか" src="">
-        <p>2020年4月に新卒で印刷/デザイン制作会社に入社。<br>web制作部署に配属され、マークアップエンジニアとしてサイト制作やCMSの記事更新などを担当。2022年12月に退職。<br>2023年3月に株式会社JUTJOYに就職。某住宅探しのサイト制作・改修の案件に現在まで参画。<br>自社ではフロントエンジニアのメンターとして、HTMLやCSS、JavaScriptなどのカリキュラムの受講者指導などを行っている。</p>
-      </section>
-      <section>
-        <h3>SKILL</h3>
-        <span>スキル</span>
-        <div>
-          <h4>TOOL</h4>
-          <span>使用可能ツール</span>
-          <dl>
-            <dt>Photoshop</dt>
-            <dd>5年</dd>
-            <dt>illustrator</dt>
-            <dd>4年</dd>
-            <dt>XD</dt>
-            <dd>4年</dd>
-            <dt>AfterEffect</dt>
-            <dd>1年</dd>
-            <dt>Premiere Pro</dt>
-            <dd>4ヶ月</dd>
-          </dl>
-        </div>
-        <div>
-          <h4>LANGUAGE</h4>
-          <span>使用可能言語</span>
-          <dl>
-            <dt>HTML/CSS</dt>
-            <dd>4年</dd>
-            <dt>JavaScript</dt>
-            <dd>2年</dd>
-            <dt>jQuery</dt>
-            <dd>2年</dd>
-            <dt>Angular</dt>
-            <dd>6ヶ月</dd>
-          </dl>
-          <p>そのほか<strong>WordPress</strong>のテーマ構築や、<strong>STUDIO</strong>でのLP作成の経験あり</p>
-        </div>
-      </section>
-      <div class="button" onclick="backAboutClick()"><a href="">back</a></div>
+      <div class="about-inner">
+        <h2>ABOUT</h2>
+        <section class="about_introduction">
+          <div class="about_introduction_info">
+            <h3>渋澤 のどか</h3>
+            <span class="name">Shibusawa Nodoka</span>
+            <dl class="info">
+              <div>
+                <dt>生年月日</dt>
+                <dd>1999/7/28（24歳）</dd>
+              </div>
+              <div>
+                <dt>出身</dt>
+                <dd>群馬県伊勢崎市南千木町</dd>
+              </div>
+              <div>
+                <dt>職歴</dt>
+                <dd>マークアップエンジニア 2年9ヶ月<br>フロントエンドエンジニア 1年2ヶ月</dd>
+              </div>
+            </dl>
+            <p>2020年4月に新卒で印刷/デザイン制作会社に入社し、web制作部にて、マークアップエンジニアとしてHP制作やCMSの記事更新などを担当。2022年12月に退職。<br>2023年3月に株式会社JUTJOYに就職。住宅探しのサイト制作・改修の案件に参画し、CMSの記事更新やHP改修はもちろん、新規プロジェクトの制作、angular環境での作業などを経験。<br>自社ではフロントエンドエンジニア教育のメンターとして、HTMLやCSS、JavaScriptなどのカリキュラムの受講者指導などを行っている。</p>
+          </div>
+          <div class="about_introduction_img">
+            <img alt="" src="img/parts_about-frame.png" class="frame">
+            <img alt="渋澤のどか" src="img/parts_about-portrait.png" class="portrait">
+          </div>
+        </section>
+        <section class="about_skill">
+          <div class="about_skill-midashi">
+            <h3>SKILL</h3>
+            <span class="name">スキル</span>
+          </div>
+          <div class="about_skill-inner">
+            <div>
+              <div class="about_skill_title">
+                <h4>TOOL</h4>
+                <span class="name">使用可能ツール</span>
+              </div>
+              <dl class="about_skill_info">
+                <dt>Photoshop</dt>
+                <dd>5年</dd>
+                <dt>illustrator</dt>
+                <dd>4年</dd>
+                <dt>XD</dt>
+                <dd>4年</dd>
+                <dt>AfterEffect</dt>
+                <dd>1年</dd>
+                <dt>Premiere Pro</dt>
+                <dd>4ヶ月</dd>
+              </dl>
+            </div>
+            <div>
+              <div class="about_skill_title">
+                <h4>LANGUAGE</h4>
+                <span class="name">使用可能言語</span>
+              </div>
+              <dl class="about_skill_info">
+                <dt>HTML/CSS</dt>
+                <dd>4年</dd>
+                <dt>JavaScript</dt>
+                <dd>2年</dd>
+                <dt>jQuery</dt>
+                <dd>2年</dd>
+                <dt>Angular</dt>
+                <dd>6ヶ月</dd>
+              </dl>
+              <p>その他<strong>WordPress</strong>のテーマ構築、<strong>STUDIO</strong>でLP作成経験有</p>
+            </div>
+          </div>
+        </section>
+        <section>
+          <h3>CERTIFICATION</h3>
+          <span class="name">所持資格</span>
+        </section>
+        <div class="button" onclick="backAboutClick()"><a href="">back</a></div>
+      </div>
     </section>
   </main>
 
   <footer class="footer">
-    <p><small>© NODOKA SHIBUSAWA 2024</small></p>
+    <p><small>© Shibusawa Nodoka 2024</small></p>
   </footer>
   <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
   <script src="js/script.js"></script>

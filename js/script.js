@@ -94,13 +94,13 @@ function aboutClick() {
     setTimeout(() => {
         stalker.querySelector('img').src = 'img/parts_girl-about1.png';
         stalker.classList.toggle('anime-walk');
-    }, "3000");
+    }, "2500");
     setTimeout(() => {
         stalker.querySelector('img').src = 'img/parts_girl-about2.png';
-    }, "4000");
+    }, "3500");
     setTimeout(() => {
         aboutClickToggle();
-    }, "5000");
+    }, "4500");
 };
 
 // about→home画面移行
@@ -139,7 +139,7 @@ function workClick() {
     setTimeout(() => {
         slider.classList.toggle('none');
         slider.classList.toggle('show');
-    }, "6000");
+    }, "3500");
 };
 
 // work→home画面移行
@@ -156,7 +156,7 @@ function backWorkClick() {
         stalker.style.right = 'calc(45vw)';
         navDisplay();
         stalkerDisplay = true;
-    }, "5000");
+    }, "3500");
 };
 
 //swiper
@@ -168,7 +168,7 @@ const workSwiper = new Swiper('.swiper', {
     loop: true,
     loopAdditionalSlides: 1,
     centeredSlides: true,
-    speed: 1600,
+    speed: 1000,
     pagination: {
         el: ".swiper-pagination",
         clickable: true,

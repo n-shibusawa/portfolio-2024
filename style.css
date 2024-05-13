@@ -38,9 +38,16 @@ body {
     right: 0;
     z-index: 1;
     color: #5a3118;
+    font-family: "M PLUS 1p";
+    font-size: 1.25vw;
+    line-height: 2;
 }
 body.about-active {
     overflow-y: auto;
+}
+
+h2,h3,h4,a {
+    font-family: "Montserrat", sans-serif;
 }
 
 /*=============================
@@ -147,7 +154,7 @@ header
     top: 0;
     left: 0;
     z-index: 20;
-    background: #447156;
+    background: #5f827b;
 }
 .logo_title {
     position: absolute;
@@ -158,9 +165,6 @@ header
     width: 50vh;
     margin: 0;
 }
-.logo_title img {
-    filter: drop-shadow(0 3px 3px rgba(0, 0, 0, 1));
-}
 .nav {
     position: relative;
     bottom: -100vh;
@@ -168,7 +172,7 @@ header
     width: 100%;
     height: 100vh;
     z-index: 10;
-    transition: all 1s;
+    transition: all .6s;
 }
 .nav-active {
     bottom: 0vh;
@@ -194,7 +198,7 @@ header
     z-index: 1;
 }
 .nav img {
-    filter: drop-shadow(0 3px 3px rgba(0, 0, 0, 1));
+    filter: drop-shadow(0 1vh .5vw rgba(0, 0, 0, 1));
 }
 
 /*=============================
@@ -229,7 +233,7 @@ section {
 }
 h2 {
     font-size: 2vw;
-    background-color: antiquewhite;
+    background-color: #f7ecdd;
 }
 
 /* home */
@@ -241,12 +245,170 @@ h2 {
 /* about */
 .about {
     margin-top: 0;
-    background-color: antiquewhite;
-    height: 200vh;
+    background-color: #f7ecdd;
     transition: all .5s;
+    padding: 4% 10%;
 }
 .about.active {
     margin-top: -50vh;
+}
+
+.about-inner {
+    background-image: linear-gradient(180deg, #999 1px, transparent 1px);
+    background-size: 100% 2.5em;
+    background-repeat: repeat;
+    line-height: 2.5em;
+}
+.about h2 {
+    text-align: center;
+    margin-bottom: 4%;
+}
+
+.about-inner > section {
+    margin-bottom: 5em;
+    width: 100%;
+}
+
+.about_introduction {
+    display: flex;
+    flex-direction: row-reverse;
+    gap: 2%;
+}
+
+.about_introduction_info {
+    width: 68%;
+}
+.about h3 {
+    font-size: 2em;
+}
+.name {
+    display: block;
+    font-size: 1.25vw;
+}
+.info {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0 2.5em;
+}
+.info > div{
+    display: flex;
+}
+.info > div::before{
+    content: '■';
+}
+.info dt {
+    font-weight: bold;
+}
+.info dt::after {
+    content: '：';
+}
+.about_introduction_img {
+    position: relative;
+    z-index: 1;
+    width: 30%;
+}
+.frame {
+    position: relative;
+    z-index: 2;
+}
+.portrait {
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 1;
+    position: absolute;
+    width: 80%;
+}
+
+.about_skill {
+    background-color: #fff;
+    color: #5a3118;
+    padding: 6%;
+    box-shadow: 0 1vh 1vw rgba(0, 0, 0, .3);
+    position: relative;
+    background-image: linear-gradient(0deg, transparent 19px, #5f827b 2.5em), linear-gradient(90deg, transparent 19px, #5f827b 2.5em);
+    background-repeat: repeat;
+    background-size: 1em 1em;
+    transform: rotate(-2deg);
+}
+
+.about_skill::before{
+    position: absolute;
+	content: "";
+	width: 96%;
+	top: .5%;
+	left: 50%;
+    transform: translateX(-50%);
+	border-top: dotted 1.6vw #f7ecdd;
+}
+
+.about_skill::after{
+    content: '';
+	background-color: #fff;
+    background-image: linear-gradient(-45deg, #5f827b 25%, transparent 25%, transparent 50%, #5f827b 50%, #5f827b 75%, transparent 75%, transparent 100%),
+    linear-gradient(45deg, #5f827b 25%, transparent 25%, transparent 50%,  #5f827b 50%, #5f827b 75%, transparent 75%, transparent 100%);
+    background-size: 40px 40px;
+    padding: 1em;
+    position: absolute;
+    top: -4%;
+    left: 50%;
+    transform: translateX(-50%) rotate(7deg);
+    background-repeat: repeat;
+    width: 20%;
+    height: 10%;
+    opacity: .6;
+}
+
+.about_skill-midashi {
+    display: flex;
+    gap: 1em;
+    justify-content: baseline;
+    margin-bottom: 2em;
+}
+
+.about_skill-inner {
+    display: flex;
+    gap: 6%;
+}
+.about_skill-inner > div {
+    width: 47%;
+}
+
+.about_skill_title {
+    background-color: rgba(247, 236, 221, .6);
+    border-left: .5em solid #8BC6CA;
+    color: #5a3118;
+    display: flex;
+    gap: 1em;
+    padding: .5em 1em;
+    margin-bottom: 1em;
+}
+
+.about_skill h4 {
+    font-size: 1.5em;
+}
+
+.about_skill_info {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.5em 1em;
+    margin-bottom: 1.75em;
+}
+
+.about_skill_info dt {
+    font-weight: bold;
+    width: 24%;
+}
+
+.about_skill_info dd {
+    position: relative;
+    display: flex;
+    gap: 1em;
+}
+.about_skill_info dd::before {
+    content: '・・・・・';
+    font-weight: bold;
+    font-size: 2em;
 }
 
 /* work */
@@ -279,7 +441,7 @@ h2 {
     aspect-ratio: 4 / 3;
 }
 .swiper-slide {
-    background-color: antiquewhite;
+    background-color: #f7ecdd;
     border-radius: 1vw;
     transition: .5s;
     padding: 6%;
@@ -311,7 +473,7 @@ h2 {
 .more a {
     display: inline-block;
     background: #5a3118;
-    color: antiquewhite;
+    color: #f7ecdd;
     font-size: 1vw;
     font-weight: bold;
     padding: 1% 4%;
@@ -362,7 +524,7 @@ h2 {
     z-index: 1;
     bottom: 26vw;
     left: 2vw;
-    filter: drop-shadow(0 3px 3px rgba(0, 0, 0, 1));
+    filter: drop-shadow(0 1vh .5vw rgba(0, 0, 0, 1));
 }
 
 /*=============================
@@ -465,7 +627,7 @@ parts
 }
 .parts-img_girl img {
     transform: scale(1, 1);
-    filter: drop-shadow(0 3px 3px rgba(0, 0, 0, 1));
+    filter: drop-shadow(0 1vh .5vw rgba(0, 0, 0, 1));
 }
 .parts-img_girl img.right {
     transform: scale(-1, 1);
@@ -480,7 +642,7 @@ parts
     z-index: 5;
 }
 .parts-img_girl_work-sleep img {
-    filter: drop-shadow(0 3px 3px rgba(0, 0, 0, 1));
+    filter: drop-shadow(0 1vh .5vw rgba(0, 0, 0, 1));
 }
 .parts-img_girl_work-sleep .zzz {
     width: 20%;
@@ -493,6 +655,17 @@ parts
 /*=============================
 footer
 =============================*/
+.footer {
+    text-align: center;
+    position: fixed;
+    bottom: 0;
+    color: #f7ecdd;
+    z-index: 10;
+    width: 100vw;
+    height: 3.5vh;
+    font-size: 1vw;
+    left: 0;
+}
 
 /*=============================
 共通JSクラス
