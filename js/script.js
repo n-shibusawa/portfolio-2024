@@ -178,3 +178,11 @@ const workSwiper = new Swiper('.swiper', {
         prevEl: ".swiper-button-prev",
     },
 });
+
+//parallax
+let image = document.getElementsByClassName('portrait');
+new simpleParallax(image, {
+    scale: 1.4,
+	delay: .6,
+	transition: 'cubic-bezier(0,0,0,1)'
+});

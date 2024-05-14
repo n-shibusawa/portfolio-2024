@@ -265,7 +265,7 @@ h2 {
 }
 
 .about-inner > section {
-    margin-bottom: 5em;
+    margin-bottom: 5.25em;
     width: 100%;
 }
 
@@ -307,17 +307,27 @@ h2 {
     z-index: 1;
     width: 30%;
 }
-.frame {
-    position: relative;
-    z-index: 2;
-}
-.portrait {
-    top: 0;
+.about_introduction_img::before {
+    content: '';
+    position: absolute;
+    z-index: 1;
+    background: #5f827b;
+    width: 90%;
+    height: 80%;
+    top: 2%;
     left: 50%;
     transform: translateX(-50%);
-    z-index: 1;
+}
+.frame {
+    position: relative;
+    z-index: 3;
+}
+.portrait {
+    top: 15%;
+    left: 30%;
+    z-index: 2;
     position: absolute;
-    width: 80%;
+    width: 40%;
 }
 
 .about_skill {
@@ -405,10 +415,36 @@ h2 {
     display: flex;
     gap: 1em;
 }
-.about_skill_info dd::before {
-    content: '・・・・・';
+.about_skill_info dd::before,
+.about_skill_info dd::after {
     font-weight: bold;
     font-size: 2em;
+    letter-spacing: .25em;
+}
+.about_skill_info dd::before {
+    content: '・・・・・';
+}
+.about_skill_info dd::after {
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 1;
+}
+.about_skill_info dd.max::after {
+    content: '◆◆◆◆◆';
+}
+.about_skill_info dd.four::after {
+    content: '◆◆◆◆';
+}
+.about_skill_info dd.three::after {
+    content: '◆◆◆';
+}
+.about_skill_info dd.two::after {
+    content: '◆◆';
+}
+.about_skill_info dd.one::after {
+    content: '◆';
 }
 
 /* work */
