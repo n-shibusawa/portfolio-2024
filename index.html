@@ -18,22 +18,22 @@
   <header class="header">
     <div class="logo anime-background">
       <h1 class="logo_title anime-logo">
-        <a href="#">
+        <button>
           <img src="img/logo.png" alt="Shibusawa Nodoka Portfolio">
-        </a>
+        </button>
       </h1>
     </div>
     <nav class="nav">
       <ul class="nav_menu">
         <li class="nav_menu_about button" onclick="aboutClick()">
-          <a href="">
+          <button>
             <img src="img/parts_menu-about.png" alt="ABOUT">
-          </a>
+          </button>
         </li>
         <li class="nav_menu_work button" onclick="workClick()">
-          <a href="">
+          <button>
             <img src="img/parts_menu-work.png" alt="WORK">
-          </a>
+          </button>
         </li>
       </ul>
       <div class="nav_bg-img">
@@ -52,10 +52,10 @@
             <li class="swiper-slide">
               <dl class="slide">
                 <dt class="slide_title">採用広告用LP</dt>
-                <dd class="slide_img"><img alt=""></dd>
+                <dd class="slide_img"><img alt="採用広告用LP PCアイキャッチ" src="img/parts_work-lp-pc.png"></dd>
               </dl>
               <div class="more">
-                <a href="#recruit-LP">MORE</a>
+                <button data-modal="recruit-LP" class="modal-open">MORE</button>
               </div>
             </li>
             <li class="swiper-slide">
@@ -64,7 +64,7 @@
                 <dd class="slide_img"><img alt=""></dd>
               </dl>
               <div class="more">
-                <a href="#">MORE</a>
+                <button>準備中</button>
               </div>
             </li>
             <li class="swiper-slide">
@@ -73,7 +73,7 @@
                 <dd class="slide_img"><img alt=""></dd>
               </dl>
               <div class="more">
-                <a href="#">MORE</a>
+                <button>準備中</button>
               </div>
             </li>
             <li class="swiper-slide">
@@ -82,7 +82,7 @@
                 <dd class="slide_img"><img alt=""></dd>
               </dl>
               <div class="more">
-                <a href="#">MORE</a>
+                <button>MORE</button>
               </div>
             </li>
           </ul>
@@ -91,42 +91,44 @@
           <div class="swiper-button-next"></div>
         </div>
         <section id="recruit-LP" class="work_detail none">
-          <h3>採用広告用LP</h3>
-          <dl>
-            <dt>担当箇所</dt>
-            <dd>
-              <ul>
-                <li>ワイヤーフレーム</li>
-                <li>デザイン</li>
-                <li>実装</li>
-              </ul>
-            </dd>
-            <dt>使用ツール</dt>
-            <dd>
-              <ul>
-                <li>ワイヤーフレーム・デザイン：Adobe XD</li>
-                <li>実装：STUDIO</li>
-              </ul>
-            </dd>
-            <dt>制作時間</dt>
-            <dd>
-              2023年8月7日～9月20日
-            </dd>
-            <dt>制作時間</dt>
-            <dd>
-              <ul>
-                <li>ワイヤーフレーム：1週間</li>
-                <li>デザイン：2週間</li>
-                <li>実装：2週間</li>
-              </ul>
-            </dd>
-          </dl>
-          <p>所属会社の採用担当さんからご依頼いただいた、採用のYahooリスティング広告で使うLP作成を行いました。<br>ワイヤーフレームからの制作は初めてだったため、作り方や考え方を調べながら作成を進めました。また、LPを一からデザインもSTUDIOの実装も初めてと未経験尽くしだったため大変良い機会をいただきました。<br></p>
+          <div class="work_detail_box">
+            <h3>採用広告用LP</h3>
+            <dl>
+              <dt>担当箇所</dt>
+              <dd>
+                <ul>
+                  <li>ワイヤーフレーム</li>
+                  <li>デザイン</li>
+                  <li>実装</li>
+                </ul>
+              </dd>
+              <dt>使用ツール</dt>
+              <dd>
+                <ul>
+                  <li>ワイヤーフレーム・デザイン：Adobe XD</li>
+                  <li>実装：STUDIO</li>
+                </ul>
+              </dd>
+              <dt>制作時間</dt>
+              <dd>
+                2023年8月7日～9月20日
+              </dd>
+              <dt>制作時間</dt>
+              <dd>
+                <ul>
+                  <li>ワイヤーフレーム：1週間</li>
+                  <li>デザイン：2週間</li>
+                  <li>実装：2週間</li>
+                </ul>
+              </dd>
+            </dl>
+            <p>所属会社の採用担当さんからご依頼いただいた、採用のYahoo!リスティング広告で使うLP作成を行いました。<br>ワイヤーフレームからの制作は初めてだったため、作り方や考え方を調べながら作成を進めました。また、LPを一からデザインもSTUDIOの実装も初めてと未経験尽くしだったため大変良い機会をいただきました。<br></p>
+          </div>
         </section>
         <div class="back_work button" onclick="backWorkClick()">
-          <a href="">
+          <button>
             <img src="img/parts_work_back.png">
-          </a>
+          </button>
         </div>
       </section>
       <!-- 背景コンテンツ -->
@@ -220,11 +222,20 @@
             </div>
           </div>
         </section>
-        <section>
+        <section class="about_certification">
           <h3>CERTIFICATION</h3>
           <span class="name">所持資格</span>
+          <ul class="about_certification_list">
+            <li>電卓計算能力検定 3級　2018年 7月</li>
+            <li>ビジネス文書検定 3級　2018年 7月</li>
+            <li>コンピュータサービス技能 3級　2018年 8月</li>
+            <li>CGクリエイター検定 ベーシック　2018年 12月</li>
+            <li>カラーコーディネーター検定 3級　2019年 6月</li>
+          </ul>
         </section>
-        <div class="button" onclick="backAboutClick()"><a href="">back</a></div>
+      </div>
+      <div class="more" onclick="backAboutClick()">
+        <button>BACK</button>
       </div>
     </section>
   </main>

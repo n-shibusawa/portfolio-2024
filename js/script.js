@@ -1,8 +1,25 @@
 'use script';
 
+// cursorStoker
+const stalker = document.querySelector('.parts-img_girl');
+const stalkerImg = stalker.querySelector('img');
+let stalkerDisplay = true;
+document.addEventListener('mousemove', function (e) {
+    if(stalkerDisplay == true) {
+        let mouseX   = e.clientX,
+	    windowX = window.innerWidth;
+		direction = (windowX / 2) < mouseX ? 'right' : 'left';
+        if(direction == 'left') {
+            stalkerImg.classList.remove('right');
+        } else {
+            stalkerImg.classList.add('right');
+        }
+        stalker.style.right = 'calc(100vw + -' + mouseX + 'px - 5%)';
+    }
+});
+
 // opening
 const nav = document.querySelector('.nav');
-const stalker = document.querySelector('.parts-img_girl');
 window.addEventListener('load', function () {
     window.scroll({
         top: 0,
@@ -11,7 +28,7 @@ window.addEventListener('load', function () {
     stalkerDisplay = false;
     setTimeout(() => {
         nav.classList.toggle('nav-active');
-        stalker.style.right = '10%';
+        stalker.style.right = '14vw';
     }, "4000");
     setTimeout(() => {
         stalkerDisplay = true;
@@ -39,23 +56,6 @@ function sleep() {
     }
 };
 sleep();
-
-// cursorStoker
-const stalkerImg = stalker.querySelector('img');
-let stalkerDisplay = true;
-document.addEventListener('mousemove', function (e) {
-    if(stalkerDisplay == true) {
-        let mouseX   = e.clientX,
-	    windowX = window.innerWidth;
-		direction = (windowX / 2) < mouseX ? 'right' : 'left';
-        if(direction == 'left') {
-            stalkerImg.classList.remove('right');
-        } else {
-            stalkerImg.classList.add('right');
-        }
-        stalker.style.right = 'calc(100vw + -' + mouseX + 'px - 5%)';
-    }
-});
 
 // nav表示切り替え
 function navNone() {
@@ -124,6 +124,13 @@ function backAboutClick() {
     }, "3000");
 };
 
+//parallax
+let image = document.getElementsByClassName('portrait');
+new simpleParallax(image, {
+    scale: 1.4,
+	delay: .6,
+	transition: 'cubic-bezier(0,0,0,1)'
+});
 
 // home→work画面移行
 const workBtn = document.querySelector('.nav_menu_work');
@@ -179,10 +186,27 @@ const workSwiper = new Swiper('.swiper', {
     },
 });
 
-//parallax
-let image = document.getElementsByClassName('portrait');
-new simpleParallax(image, {
-    scale: 1.4,
-	delay: .6,
-	transition: 'cubic-bezier(0,0,0,1)'
+//workモーダル開閉
+let modalBtns = document.querySelectorAll(".modal-open");
+modalBtns.forEach(function (btn) {
+  btn.onclick = function () {
+    let modal = btn.getAttribute('data-modal');
+    document.getElementById(modal).classList.toggle('none');
+    document.getElementById(modal).classList.classList.toggle('show');
+  };
 });
+
+let closeBtns = document.querySelectorAll(".modalClose");
+closeBtns.forEach(function (btn) {
+  btn.onclick = function () {
+    var modal = btn.closest('.modal');
+    modal.classList.toggle('none');
+    modal.classList.toggle('show');
+  };
+});
+
+window.onclick = function (event) {
+  if (event.target.className === "modal") {
+    event.target.style.display = "none";
+  }
+};
