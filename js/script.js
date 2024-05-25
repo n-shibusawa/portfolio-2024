@@ -196,12 +196,12 @@ modalBtns.forEach(function (btn) {
   };
 });
 
-let closeBtns = document.querySelectorAll(".modalClose");
+let closeBtns = document.querySelectorAll(".modal-close");
 closeBtns.forEach(function (btn) {
   btn.onclick = function () {
-    var modal = btn.closest('.modal');
-    modal.classList.toggle('none');
-    modal.classList.toggle('show');
+    let modal = btn.getAttribute('data-modal');
+    document.getElementById(modal).classList.toggle('none');
+    document.getElementById(modal).classList.classList.toggle('show');
   };
 });
 
